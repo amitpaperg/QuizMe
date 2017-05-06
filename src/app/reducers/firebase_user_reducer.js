@@ -7,6 +7,7 @@ import {
   CHANGE_FIREBASE_USER_PASSWORD,
   FIREBASE_PASSWORD_RESET_EMAIL,
   LOGOUT_FIREBASE_USER,
+  CREATE_CLUE_QUIZ
 } from '../actions/types';
 
 
@@ -27,6 +28,8 @@ export default function (state = null, action) {
     case FIREBASE_PASSWORD_RESET_EMAIL:
         return action.payload;
     case LOGIN_WITH_PROVIDER_FIREBASE:
+        return action.payload;
+    case CREATE_CLUE_QUIZ:
         return action.payload;
     default:
         return state;

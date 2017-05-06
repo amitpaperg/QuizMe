@@ -140,6 +140,22 @@ const FireBaseTools = {
         errorMessage: error.message,
     })),
 
+    /**
+   * Send an account email verification message for the currently logged in user
+   *
+   * @returns {!firebase.Promise.<*>|firebase.Thenable<any>|firebase.Promise<any>|!firebase.Thenable.<*>}
+   */
+    createClueQuiz: (user, answer, wiki) => {
+      var quizRef = firebaseDb.ref('quiz');
+      var newQuizRef = quizRef.push();
+      newQuizRef.set({
+        user: user,
+        answer: answer,
+        wiki: wiki,
+        type: 'clue',
+      });
+    },
+
   /**
    * Get the firebase database reference.
    *

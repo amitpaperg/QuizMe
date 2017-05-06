@@ -8,6 +8,7 @@ import {
   CHANGE_FIREBASE_USER_PASSWORD,
   FIREBASE_PASSWORD_RESET_EMAIL,
   LOGOUT_FIREBASE_USER,
+  CREATE_CLUE_QUIZ
 } from './types';
 
 
@@ -71,6 +72,14 @@ export function logoutUser(user) {
     const request = FireBaseTools.logoutUser(user);
     return {
         type: LOGOUT_FIREBASE_USER,
+        payload: request,
+    };
+}
+
+export function createClueQuiz(user, answer, wiki) {
+    const request = FireBaseTools.createClueQuiz(user, answer, wiki);
+    return {
+        type: CREATE_CLUE_QUIZ,
         payload: request,
     };
 }

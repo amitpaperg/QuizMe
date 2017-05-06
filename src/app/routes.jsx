@@ -8,11 +8,13 @@ import UserLogout from './components/user/logout';
 import UserRegister from './components/user/register';
 import UserProfile from './components/user/profile';
 import ResetPassword from './components/user/reset_password';
+import ClueQuizCreator from './components/creators/clue_quiz_creator';
 import requireAuth from './utils/authenticated';
 
 export default (
     <Route path="/" component={App}>
         <IndexRoute component={HomeIndex} />
+        <Route path="/create" component={ClueQuizCreator} />
         <Route path="/login" component={UserLogin} />
         <Route path="/logout" component={UserLogout} />
         <Route path="/register" component={UserRegister} />
